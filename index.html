@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blockverse — Create. Play. Explore.</title>
+
+  <meta name="description" content="Discover amazing games, explore new worlds, and create your own experiences on Blockverse.">
+
+  <meta name="theme-color" content="#101827">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="icon" href="assets/icons/icon-192.png">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <a href="#" class="logo">
+      <span class="logo-icon">B</span>
+      <span>BLOCKVERSE</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#discover">Discover</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#create">Create</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="login-button">Log In</button>
+      <button class="signup-button">Sign Up</button>
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="welcome-section">
+
+      <div class="welcome-content">
+
+        <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+
+        <h1>
+          PLAY.
+          <span>CREATE.</span>
+          EXPLORE.
+        </h1>
+
+        <p>
+          Discover incredible worlds, meet new players,
+          and create experiences of your own.
+          Your universe starts on Blockverse.
+        </p>
+
+        <div class="welcome-buttons">
+          <button class="primary-button" onclick="scrollToGames()">
+            Explore Games
+          </button>
+
+          <button class="secondary-button" onclick="scrollToCreate()">
+            Start Creating
+          </button>
+        </div>
+
+      </div>
+
+      <div class="welcome-art">
+
+        <div class="floating-card card-one">
+          <span>🎮</span>
+          <strong>PLAY</strong>
+        </div>
+
+        <div class="floating-card card-two">
+          <span>🌎</span>
+          <strong>EXPLORE</strong>
+        </div>
+
+        <div class="floating-card card-three">
+          <span>🧱</span>
+          <strong>CREATE</strong>
+        </div>
+
+        <div class="hero-circle">
+          <div class="hero-cube">B</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="stats-section">
+
+      <div class="stat">
+        <strong>∞</strong>
+        <span>Possibilities</span>
+      </div>
+
+      <div class="stat">
+        <strong>3D</strong>
+        <span>Immersive Worlds</span>
+      </div>
+
+      <div class="stat">
+        <strong>YOU</strong>
+        <span>Make The Experience</span>
+      </div>
+
+    </section>
+
+
+    <section class="content-section" id="discover">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">FIND YOUR NEXT ADVENTURE</span>
+          <h2>Discover Games</h2>
+          <p>Explore worlds created by the Blockverse community.</p>
+        </div>
+
+        <button class="view-all-button">View All</button>
+
+      </div>
+
+
+      <div class="game-grid" id="game-grid">
+
+        <article class="game-card">
+
+          <div class="game-thumbnail thumbnail-one">
+            <span>🏙️</span>
+            <div class="game-tag">POPULAR</div>
+          </div>
+
+          <div class="game-info">
+            <h3>City Life</h3>
+            <p>Explore a colorful city.</p>
+            <span class="player-count">● Coming Soon</span>
+          </div>
+
+        </article>
+
+
+        <article class="game-card">
+
+          <div class="game-thumbnail thumbnail-two">
+            <span>🏝️</span>
+          </div>
+
+          <div class="game-info">
+            <h3>Island Adventure</h3>
+            <p>Discover mysterious islands.</p>
+            <span class="player-count">● Coming Soon</span>
+          </div>
+
+        </article>
+
+
+        <article class="game-card">
+
+          <div class="game-thumbnail thumbnail-three">
+            <span>🚀</span>
+          </div>
+
+          <div class="game-info">
+            <h3>Space Explorers</h3>
+            <p>Travel beyond the stars.</p>
+            <span class="player-count">● Coming Soon</span>
+          </div>
+
+        </article>
+
+
+        <article class="game-card">
+
+          <div class="game-thumbnail thumbnail-four">
+            <span>🏰</span>
+          </div>
+
+          <div class="game-info">
+            <h3>Fantasy Kingdom</h3>
+            <p>Enter a magical world.</p>
+            <span class="player-count">● Coming Soon</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section class="creator-section" id="create">
+
+      <div class="creator-content">
+
+        <span class="eyebrow">YOUR IMAGINATION, YOUR WORLD</span>
+
+        <h2>Become a Creator.</h2>
+
+        <p>
+          Build your own 3D worlds, design experiences,
+          and share your creations with the entire community.
+        </p>
+
+        <button class="primary-button" onclick="showComingSoon()">
+          Open Creator Studio
+        </button>
+
+      </div>
+
+      <div class="creator-art">
+        <span>🧱</span>
+        <span>🎨</span>
+        <span>🌎</span>
+      </div>
+
+    </section>
+
+
+    <section class="marketplace-section" id="marketplace">
+
+      <div>
+        <span class="eyebrow">MAKE IT YOURS</span>
+        <h2>Marketplace</h2>
+        <p>Discover accessories, avatar items, and more.</p>
+      </div>
+
+      <button class="secondary-button" onclick="showComingSoon()">
+        Explore Marketplace
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <a href="#" class="logo">
+      <span class="logo-icon">B</span>
+      <span>BLOCKVERSE</span>
+    </a>
+
+    <p>© 2026 Blockverse. Create. Play. Explore.</p>
+
+    <span class="footer-note">
+      An original community gaming platform.
+    </span>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
