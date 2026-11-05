@@ -261,7 +261,24 @@
   </footer>
 
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
+<script>
+  // Register the Blockverse service worker
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then(() => {
+          console.log("Blockverse offline support enabled!");
+        })
+        .catch(error => {
+          console.error("Service worker registration failed:", error);
+        });
+    });
+  }
+</script>
 
 </body>
 </html>
+
+ 
