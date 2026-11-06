@@ -371,19 +371,51 @@
 
 
     <!-- PLAYER PROFILE -->
-    <div id="account-profile" class="account-card" hidden>
+<div id="account-profile" class="account-profile" hidden>
+  <h3>Your Blockverse Profile</h3>
 
-      <h3>Your Account</h3>
+  <div class="profile-preview">
+    <div class="profile-avatar" id="profile-avatar">B</div>
+    <div>
+      <h4 id="profile-display">Player</h4>
+      <p id="profile-username">@player</p>
+    </div>
+  </div>
 
-      <p id="profile-display"></p>
+  <form id="edit-profile-form">
+    <label for="edit-display-name">Display Name</label>
+    <input
+      type="text"
+      id="edit-display-name"
+      maxlength="24"
+      placeholder="Your display name"
+      required
+    >
 
-      <button
-        id="logout-button"
-        class="account-button"
-        type="button"
-      >
-        Log Out
-      </button>
+    <label for="edit-username">Username</label>
+    <input
+      type="text"
+      id="edit-username"
+      minlength="3"
+      maxlength="20"
+      pattern="[A-Za-z0-9_]+"
+      placeholder="your_username"
+      required
+    >
+
+    <label for="edit-bio">Bio</label>
+    <textarea
+      id="edit-bio"
+      maxlength="160"
+      placeholder="Tell players about yourself..."
+    ></textarea>
+
+    <button type="submit">Save Profile</button>
+    <p id="profile-message" role="status"></p>
+  </form>
+
+  <button id="logout-button" type="button">Log Out</button>
+</div>
 
     </div>
 
