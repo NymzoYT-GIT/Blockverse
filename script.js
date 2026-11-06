@@ -295,3 +295,80 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 console.log("Blockverse account system loaded!");
+
+// BLOCKVERSE PROFILE EDITOR
+const editProfileForm = document.getElementById("edit-profile-form");
+
+if (editProfileForm) {
+  editProfileForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const message = document.getElementById("profile-message");
+    const saveButton = editProfileForm.querySelector('button[type="submit"]');
+
+    const displayName = document
+      .getElementById("edit-display-name").value.trim();
+
+    const username = document
+      .getElementById("edit-username").value.trim();
+
+    const bio = document
+      .getElementById("edit-bio").value.trim();
+
+    const { data: sessionData } =
+      await blockverseSupabase.auth.getSession();
+
+    const user = sessionData.session?.user;
+
+    if (!user) {
+      message.textContent = "Please log in again.";
+      return;
+    }
+
+    if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) {
+      message.textContent =
+        "Username must be 3–20 characters using letters, numbers, or underscores.";
+      return;
+    }
+
+    if (!displayName || displayName.length > 24) {
+      message.textContent = "Display name must be 1–24 characters.";
+      return;
+    }
+
+    message.textContent = "Saving profile...";
+    saveButton.disabled = true;
+
+    try {
+      const { error } = await blockverseSupabase
+        .from("profiles")
+        .update({
+          username,
+          display_name: displayName,
+          bio,
+          updated_at: new Date().toISOString()
+        })
+        .eq("id", user.id);
+
+      if (error) throw error;
+
+      document.getElementById("profile-display").textContent = displayName;
+      document.getElementById("profile-username").textContent =
+        "@" + username;
+      document.getElementById("profile-avatar").textContent =
+        displayName.charAt(0).toUpperCase();
+
+      message.textContent = "Profile saved successfully!";
+
+    } catch (error) {
+      console.error("Profile save error:", error);
+
+      message.textContent =
+        error.code === "23505"
+          ? "That username is already taken."
+          : error.message || "Could not save your profile.";
+    } finally {
+      saveButton.disabled = false;
+    }
+  });
+}
