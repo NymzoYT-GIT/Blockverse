@@ -685,3 +685,115 @@ a {
   }
 
 }
+/* ========================================
+   BLOCKVERSE ACCOUNT SYSTEM
+======================================== */
+
+.account-section {
+  padding: 90px 8%;
+  background: #080d1b;
+}
+
+.account-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 950px;
+  margin: 40px auto;
+}
+
+.account-card {
+  background: #101a30;
+  border: 1px solid #263957;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.account-card h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.account-card > p {
+  color: #9eacc5;
+  margin-bottom: 25px;
+}
+
+.account-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-card label {
+  color: #dce7ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account-card input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 9px;
+  border: 1px solid #304565;
+  background: #080f20;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.account-card input:focus {
+  border-color: #08d9f4;
+  box-shadow: 0 0 0 3px rgba(8, 217, 244, 0.12);
+}
+
+.account-button {
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #08bfe8, #7652ed);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.account-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.account-message {
+  min-height: 20px;
+  color: #08d9f4;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+#account-profile {
+  max-width: 450px;
+  margin: 30px auto;
+}
+
+#account-profile[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .account-container {
+    grid-template-columns: 1fr;
+  }
+
+  .account-section {
+    padding: 60px 5%;
+  }
+
+  .account-card {
+    padding: 24px;
+  }
+}
