@@ -3,7 +3,7 @@
 // BLOCKVERSE - SERVICE WORKER
 // ========================================
 
-const CACHE_NAME = "blockverse-v1";
+const CACHE_NAME = "blockverse-v2";
 
 const CORE_FILES = [
   "./",
