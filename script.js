@@ -1,5 +1,20 @@
 
 // ========================================
+// BLOCKVERSE - SUPABASE CONNECTION
+// ========================================
+
+const SUPABASE_URL = "https://zjuqghwgwaanhgyfkcyo.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_9ONLiPEO018THPJ6PFTEBA_Gnt3lJ8l";
+
+const blockverseSupabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+console.log("Blockverse database connection initialized!");
+
+
+// ========================================
 // BLOCKVERSE - MAIN JAVASCRIPT
 // ========================================
 
