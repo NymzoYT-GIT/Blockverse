@@ -244,7 +244,98 @@
 
   </main>
 
+<!-- BLOCKVERSE ACCOUNT SYSTEM -->
+<section id="account" class="account-section">
+  <div class="section-heading">
+    <span class="section-tag">YOUR BLOCKVERSE ACCOUNT</span>
+    <h2>Join the Community</h2>
+    <p>Create an account or log in to access your Blockverse profile.</p>
+  </div>
 
+  <div class="account-container">
+
+    <!-- SIGN UP -->
+    <div class="account-card">
+      <h3>Create Account</h3>
+      <p>Start your Blockverse adventure.</p>
+
+      <form id="signup-form">
+        <label for="signup-username">Username</label>
+        <input
+          id="signup-username"
+          type="text"
+          placeholder="Choose a username"
+          minlength="3"
+          maxlength="20"
+          required
+        >
+
+        <label for="signup-email">Email</label>
+        <input
+          id="signup-email"
+          type="email"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label for="signup-password">Password</label>
+        <input
+          id="signup-password"
+          type="password"
+          placeholder="Create a password"
+          minlength="8"
+          required
+        >
+
+        <button type="submit" class="account-button">
+          Create Account
+        </button>
+
+        <p id="signup-message" class="account-message" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- LOG IN -->
+    <div class="account-card">
+      <h3>Welcome Back</h3>
+      <p>Log in to continue playing.</p>
+
+      <form id="login-form">
+        <label for="login-email">Email</label>
+        <input
+          id="login-email"
+          type="email"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label for="login-password">Password</label>
+        <input
+          id="login-password"
+          type="password"
+          placeholder="Enter your password"
+          required
+        >
+
+        <button type="submit" class="account-button">
+          Log In
+        </button>
+
+        <p id="login-message" class="account-message" aria-live="polite"></p>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- LOGGED-IN PROFILE -->
+  <div id="account-profile" class="account-card" hidden>
+    <h3>Your Account</h3>
+    <p id="profile-display"></p>
+    <button id="logout-button" class="account-button" type="button">
+      Log Out
+    </button>
+  </div>
+</section>
   <footer class="footer">
 
     <a href="#" class="logo">
