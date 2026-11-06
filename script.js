@@ -59,6 +59,8 @@ async function loadBlockverseProfile(user) {
 
   const profileElement = document.getElementById("account-profile");
   const displayElement = document.getElementById("profile-display");
+  const usernameElement = document.getElementById("profile-username");
+  const avatarElement = document.getElementById("profile-avatar");
 
   try {
     const { data: profile, error } = await blockverseSupabase
@@ -69,13 +71,31 @@ async function loadBlockverseProfile(user) {
 
     if (error) throw error;
 
+    const displayName = profile?.display_name || "Player";
+    const username = profile?.username || "player";
+    const bio = profile?.bio || "";
+
     if (profileElement) profileElement.hidden = false;
 
     if (displayElement) {
-      displayElement.textContent = profile
-        ? `Welcome, ${profile.display_name} (@${profile.username})`
-        : `Welcome, ${user.email}`;
+      displayElement.textContent = displayName;
     }
+
+    if (usernameElement) {
+      usernameElement.textContent = "@" + username;
+    }
+
+    if (avatarElement) {
+      avatarElement.textContent = displayName.charAt(0).toUpperCase();
+    }
+
+    const displayInput = document.getElementById("edit-display-name");
+    const usernameInput = document.getElementById("edit-username");
+    const bioInput = document.getElementById("edit-bio");
+
+    if (displayInput) displayInput.value = displayName;
+    if (usernameInput) usernameInput.value = username;
+    if (bioInput) bioInput.value = bio;
 
     const signupForm = document.getElementById("signup-form");
     const loginForm = document.getElementById("login-form");
@@ -85,6 +105,7 @@ async function loadBlockverseProfile(user) {
 
   } catch (error) {
     console.error("Profile loading error:", error);
+
     showAccountMessage(
       "login-message",
       "You're logged in, but your profile could not be loaded."
