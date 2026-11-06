@@ -13,12 +13,13 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-
   <link rel="icon" href="assets/icons/icon-192.png">
+
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header class="topbar">
 
     <a href="#" class="logo">
@@ -33,15 +34,22 @@
     </nav>
 
     <div class="header-actions">
-      <button class="login-button">Log In</button>
-      <button class="signup-button">Sign Up</button>
+      <button class="login-button" onclick="document.getElementById('login-email').scrollIntoView({behavior:'smooth',block:'center'});">
+        Log In
+      </button>
+
+      <button class="signup-button" onclick="document.getElementById('signup-username').scrollIntoView({behavior:'smooth',block:'center'});">
+        Sign Up
+      </button>
     </div>
 
   </header>
 
 
+  <!-- MAIN CONTENT -->
   <main>
 
+    <!-- HERO -->
     <section class="welcome-section">
 
       <div class="welcome-content">
@@ -61,6 +69,7 @@
         </p>
 
         <div class="welcome-buttons">
+
           <button class="primary-button" onclick="scrollToGames()">
             Explore Games
           </button>
@@ -68,6 +77,7 @@
           <button class="secondary-button" onclick="scrollToCreate()">
             Start Creating
           </button>
+
         </div>
 
       </div>
@@ -98,6 +108,7 @@
     </section>
 
 
+    <!-- STATS -->
     <section class="stats-section">
 
       <div class="stat">
@@ -118,6 +129,7 @@
     </section>
 
 
+    <!-- DISCOVER GAMES -->
     <section class="content-section" id="discover">
 
       <div class="section-heading">
@@ -200,6 +212,7 @@
     </section>
 
 
+    <!-- CREATOR SECTION -->
     <section class="creator-section" id="create">
 
       <div class="creator-content">
@@ -228,6 +241,7 @@
     </section>
 
 
+    <!-- MARKETPLACE -->
     <section class="marketplace-section" id="marketplace">
 
       <div>
@@ -244,98 +258,139 @@
 
   </main>
 
-<!-- BLOCKVERSE ACCOUNT SYSTEM -->
-<section id="account" class="account-section">
-  <div class="section-heading">
-    <span class="section-tag">YOUR BLOCKVERSE ACCOUNT</span>
-    <h2>Join the Community</h2>
-    <p>Create an account or log in to access your Blockverse profile.</p>
-  </div>
 
-  <div class="account-container">
+  <!-- BLOCKVERSE ACCOUNT SYSTEM -->
+  <section id="account" class="account-section">
 
-    <!-- SIGN UP -->
-    <div class="account-card">
-      <h3>Create Account</h3>
-      <p>Start your Blockverse adventure.</p>
+    <div class="section-heading">
 
-      <form id="signup-form">
-        <label for="signup-username">Username</label>
-        <input
-          id="signup-username"
-          type="text"
-          placeholder="Choose a username"
-          minlength="3"
-          maxlength="20"
-          required
-        >
+      <span class="section-tag">YOUR BLOCKVERSE ACCOUNT</span>
 
-        <label for="signup-email">Email</label>
-        <input
-          id="signup-email"
-          type="email"
-          placeholder="Enter your email"
-          required
-        >
+      <h2>Join the Community</h2>
 
-        <label for="signup-password">Password</label>
-        <input
-          id="signup-password"
-          type="password"
-          placeholder="Create a password"
-          minlength="8"
-          required
-        >
+      <p>Create an account or log in to access your Blockverse profile.</p>
 
-        <button type="submit" class="account-button">
-          Create Account
-        </button>
-
-        <p id="signup-message" class="account-message" aria-live="polite"></p>
-      </form>
     </div>
 
-    <!-- LOG IN -->
-    <div class="account-card">
-      <h3>Welcome Back</h3>
-      <p>Log in to continue playing.</p>
 
-      <form id="login-form">
-        <label for="login-email">Email</label>
-        <input
-          id="login-email"
-          type="email"
-          placeholder="Enter your email"
-          required
-        >
+    <div class="account-container">
 
-        <label for="login-password">Password</label>
-        <input
-          id="login-password"
-          type="password"
-          placeholder="Enter your password"
-          required
-        >
+      <!-- SIGN UP -->
+      <div class="account-card">
 
-        <button type="submit" class="account-button">
-          Log In
-        </button>
+        <h3>Create Account</h3>
 
-        <p id="login-message" class="account-message" aria-live="polite"></p>
-      </form>
+        <p>Start your Blockverse adventure.</p>
+
+        <form id="signup-form">
+
+          <label for="signup-username">Username</label>
+
+          <input
+            id="signup-username"
+            type="text"
+            placeholder="Choose a username"
+            minlength="3"
+            maxlength="20"
+            autocomplete="username"
+            required
+          >
+
+          <label for="signup-email">Email</label>
+
+          <input
+            id="signup-email"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+
+          <label for="signup-password">Password</label>
+
+          <input
+            id="signup-password"
+            type="password"
+            placeholder="Create a password"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+
+          <button type="submit" class="account-button">
+            Create Account
+          </button>
+
+          <p id="signup-message" class="account-message" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
+
+      <!-- LOGIN -->
+      <div class="account-card">
+
+        <h3>Welcome Back</h3>
+
+        <p>Log in to continue playing.</p>
+
+        <form id="login-form">
+
+          <label for="login-email">Email</label>
+
+          <input
+            id="login-email"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+
+          <label for="login-password">Password</label>
+
+          <input
+            id="login-password"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button type="submit" class="account-button">
+            Log In
+          </button>
+
+          <p id="login-message" class="account-message" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
     </div>
 
-  </div>
 
-  <!-- LOGGED-IN PROFILE -->
-  <div id="account-profile" class="account-card" hidden>
-    <h3>Your Account</h3>
-    <p id="profile-display"></p>
-    <button id="logout-button" class="account-button" type="button">
-      Log Out
-    </button>
-  </div>
-</section>
+    <!-- PLAYER PROFILE -->
+    <div id="account-profile" class="account-card" hidden>
+
+      <h3>Your Account</h3>
+
+      <p id="profile-display"></p>
+
+      <button
+        id="logout-button"
+        class="account-button"
+        type="button"
+      >
+        Log Out
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
   <footer class="footer">
 
     <a href="#" class="logo">
@@ -352,31 +407,31 @@
   </footer>
 
 
-<script src="script.js"></script>
+  <!-- SUPABASE LIBRARY: MUST LOAD BEFORE script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- BLOCKVERSE JAVASCRIPT: LOAD ONLY ONCE -->
+  <script src="script.js"></script>
 
 
-<!-- Supabase JavaScript library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- SERVICE WORKER -->
+  <script>
+    if ("serviceWorker" in navigator) {
 
-<!-- Blockverse JavaScript -->
-<script src="script.js"></script>
+      window.addEventListener("load", () => {
 
-<!-- Service Worker -->
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js")
-        .then(() => {
-          console.log("Blockverse offline support enabled!");
-        })
-        .catch(error => {
-          console.error("Service worker registration failed:", error);
-        });
-    });
-  }
-</script>
+        navigator.serviceWorker.register("./sw.js")
+          .then(() => {
+            console.log("Blockverse offline support enabled!");
+          })
+          .catch(error => {
+            console.error("Service worker registration failed:", error);
+          });
+
+      });
+
+    }
+  </script>
 
 </body>
 </html>
-
- 
